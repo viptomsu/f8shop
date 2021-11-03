@@ -8,6 +8,7 @@
 	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
 	<!-- google font  -->
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@1,600&display=swap" rel="stylesheet">
 	<!-- link css -->
 	<link rel="stylesheet" href= "assets/css/base.css">
 	<link rel="stylesheet" href= "assets/css/main.css">
@@ -28,7 +29,7 @@
 							<a href="#">Homepage</a>
 						</li>
 						<li class="navbar__item">
-							<a href="#">Become Shopee's seller</a>
+							<a href="#">Sell on Shopee</a>
 						</li>
 						<li class="navbar__item hover_menu--toggle">
 							<a href="#">Download app</a>
@@ -45,9 +46,9 @@
 							</div>
 						</li>
 						<li class="navbar__item">
-							About us
+							<span style="margin-left: 0.625rem;">Follow us</span>
 							<a href="#"><i class="navbar__icon fa-brands fa-facebook"></i></a>
-							<a href="#"><i class="navbar__icon fa-brands fa-instagram"></i></a>
+							<a href="#" style="padding: 0;"><i class="navbar__icon fa-brands fa-instagram"></i></a>
 						</li>
 					</ul>
 					<ul class="navbar__list">
@@ -56,7 +57,7 @@
 								<i class="navbar__icon fa-regular fa-bell"></i>
 								Notifications
 							</a>
-							<div class="notify hover_menu">
+							<div class="notify hover_menu up-arrow">
 								<div class="notify__body">
 									<img src="assets/img/no_acc_notify.png" alt="">
 									<p>Log in to see your notifications</p>
@@ -73,12 +74,23 @@
 								Help
 							</a>
 						</li>
-						<li class="navbar__item navbar__item--devider">
+						<li class="navbar__item user hover_menu--toggle">
+							<a href="#">
+								<img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg" alt="" class="user__img">
+								<h5 class="user__name">Default user</h5>
+							</a>
+							<ul class="user__menu hover_menu up-arrow">
+								<li class="user__menu-item"><a href="#">My account</a></li>
+								<li class="user__menu-item"><a href="#">Receipt</a></li>
+								<li class="user__menu-item menu-item--divider"><a href="#">Log out</a></li>
+							</ul>
+						</li>
+						<!-- <li class="navbar__item navbar__item--devider">
 							<a href="#">Sign up</a>
 						</li>
 						<li class="navbar__item">
 							<a href="#">Sign in</a>
-						</li>
+						</li> -->
 					</ul>
 				</nav>
 
@@ -99,32 +111,80 @@
 							</div>
 						</div>
 						
-						<div class="header__search-select hover_menu--toggle">
-							<span class="select__label">In this shop</span>
-							<i class="fa-solid fa-angle-down"></i>
+						<div class="header__search-select form-select hover_menu--toggle">
+							<span class="select__default">In this shop</span>
 							<ul class="select__options hover_menu">
 								<li>
-									<span>In this shop</span>
-									<input type="radio" name="search-option" id="search_option1" checked>
-									<i class="fa-solid fa-check"></i>
+									<input type="radio" name="headerSelect_options" id="headerSelect-price1" checked>
+									<label for="headerSelect-price1">In this shop</label>
 								</li>
 								<li>
-									<span>In Shopee</span>
-									<input type="radio" name="search-option" id="search_option2">
-									<i class="fa-solid fa-check"></i>
+									<input type="radio" name="headerSelect_options" id="headerSelect-price2">
+									<label for="headerSelect-price2">In shopee</label>
 								</li>
 							</ul>
 						</div>
-						<button class="btn btn--sm">
+						<button class="btn size-sm">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</div>
 					<div class="header__cart">
 						<div class="shopping-cart hover_menu--toggle">
 							<i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-							<div class="shopping-cart__list shopping-cart--no_products hover_menu">
-								<img src="assets/img/no_products.png" alt="">
-								<p>Your shopping cart is empty.</p>
+							<span class="badge">3</span>
+							<div class="shopping-cart__list hover_menu up-arrow">
+								<!--shopping-cart--empty  -->
+								<!-- <div class="shopping-cart--empty">
+									<img src="assets/img/no_products.png" alt="">
+									<p>Your shopping cart is empty.</p>
+								</div> -->
+								
+								<!-- shopping cart has any products  -->
+								<div class="shopping-cart--not_empty">
+									<header class="shopping-cart__header">
+										<h3>Your shopping cart</h3>
+									</header>
+									<ul class="shopping-cart__products">
+										<li class="">
+											<a href="#" class="shopping-cart__product">
+												<img src="https://cdn-amz.fadoglobal.io/images/I/61GGTYl-huL.jpg" alt="" class="product__img">
+												<div class="product__info">
+													<h4 class="product__name">Razer Cynosa Chroma Gaming Keyboard</h4>
+													<span class="price">39.99</span>
+													<span class="product__quantity">1</span>
+												</div>
+											</a>
+											<button class="btn product__del"><i class="fa-solid fa-trash"></i></button>
+										</li>
+										<li class="">
+											<a href="#" class="shopping-cart__product">
+												<img src="https://m.media-amazon.com/images/I/71h3meRiKOL._AC_SX466_.jpg" alt="" class="product__img">
+												<div class="product__info">
+													<h4 class="product__name">Xiaomi Mi Smart Band 6</h4>
+													<span class="price">41.99</span>
+													<span class="product__quantity">1</span>
+												</div>
+											</a>
+											<button class="btn product__del"><i class="fa-solid fa-trash"></i></button>
+										</li>
+										<li class="">
+											<a href="#" class="shopping-cart__product">
+												<img src="https://m.media-amazon.com/images/I/41SyuiCk7JL._AC_SX466_.jpg" alt="" class="product__img">
+												<div class="product__info">
+													<h4 class="product__name">WYZE Cam Outdoor Starter Bundle</h4>
+													<span class="price">58.83</span>
+													<span class="product__quantity">4</span>
+												</div>
+											</a>
+											<button class="btn product__del"><i class="fa-solid fa-trash"></i></button>
+										</li>
+									</ul>
+									<footer class="shopping-cart__footer">
+										<button class="btn btn--primary btn--md">Go to cart</button>
+									</footer>
+
+								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -132,12 +192,1342 @@
 			</div>
 		</header>
 
-		<div class="content">
+		<div class="main__content">
+			<div class="grid">
+				<div class="row">
+					<div class="col-2">
+						<div class="filter-panel">
+							<div class="category mr-1">
+								<a href="#" class="category__header">
+									<i class="heading-icon fa-solid fa-list-ul"></i>
+									All categories
+								</a>
+								<div class="category__body">
+									<a href="#" class="category__main category--active">
+										Computers & Laptop
+									</a>
+									<ul class="category__list">
+										<li>
+											<a href="#">Computers</a>
+										</li>
+										<li>
+											<a href="#">Moniters</a>
+										</li>
+										<li>
+											<a href="#">Computer accessories</a>
+										</li>
+										<li>
+											<a href="#">Networking</a>
+										</li>
+										<li>
+											<a href="#">Storages</a>
+										</li>
+										<li>
+											<a href="#">Peripherals</a>
+										</li>
+										<li>
+											<a href="#">Laptops</a>
+										</li>
+										<li>
+											<a href="#">Laptop accessories</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="search-filter mr-1">
+								<h2 class="search-filter__header">
+									<i class="heading-icon fa-solid fa-filter"></i>
+									Filter
+								</h2>
+								<div class="filter-group">
+									<h3 class="filter-group__header">City</h3>
+									<ul class="filter-group__list">
+										<li class="">
+											<input type="checkbox"  class="form-check" checked name="" id="hanoi">
+											<label for="hanoi">Ha Noi</label>
+										</li>
+										<li class="">
+											<input type="checkbox" class="form-check" name="" id="haiphong">
+											<label for="haiphong">Hai Phong</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="" id="hochiminh_city">
+											<label for="hochiminh_city">Ho Chi Minh City</label>
+										</li>
+										<li class="filter-group__more">
+											<div class="group__more-toggle">More</div>
+										</li>
+									</ul>
+								</div>
+								<div class="filter-group">
+									<h3 class="filter-group__header">Transporter</h3>
+									<ul class="filter-group__list">
+										<li>
+											<input type="checkbox" class="form-check" name="" id="super_fast">
+											<label for="super_fast">Super fast</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="" id="fast_transport">
+											<label for="fast_transport">Fast</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="" id="cheap_transport">
+											<label for="cheap_transport">Cheap</label>
+										</li>
+									</ul>
+								</div>
+								<div class="filter-group">
+									<h3 class="filter-group__header">Brands</h3>
+									<ul class="filter-group__list">
+										<li>
+											<input type="checkbox" class="form-check" name="brands_filter" id="apple">
+											<label for="apple">Apple</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="brands_filter" id="lenovo">
+											<label for="lenovo">Lenovo</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="brands_filter" id="dell">
+											<label for="dell">Dell</label>
+										</li>
+										<li class="filter-group__more">
+											<div class="group__more-toggle">More</div>
+										</li>
+									</ul>
+								</div>
+								<div class="filter-group">
+									<h3 class="filter-group__header">Customer reviews</h3>
+									<div class="rating">
+										<input type="radio" id="star5" name="rate" value="5"/>
+										<label for="star5" title="5 stars"></label>
+										<input type="radio" id="star4" name="rate" value="4"/>
+										<label for="star4" title="4 stars & up"></label>
+										<input type="radio" id="star3" name="rate" value="3"/>
+										<label for="star3" title="3 stars & up"></label>
+										<input type="radio" id="star2" name="rate" value="2"/>
+										<label for="star2" title="2 stars & up"></label>
+										<input type="radio" id="star1" name="rate" value="1"/>
+										<label for="star1" title="1 star & up"></label>
+									</div>
+								</div>
+								<div class="filter-group">
+									<h3 class="filter-group__header">Price</h3>
+									<form>
+										<div class="form-group form-inline">
+											<input type="text" class="form-control size-sm" placeholder="From">
+											<input type="text" class="form-control size-sm" placeholder="To">
+										</div>
+										<div class="form-group">
+											<button class="btn btn--primary btn--block size-sm text-upper">Apply</button>
+										</div>
+									</form>
+								</div>
+								<div class="filter-group">
+									<h3 class="filter-group__header">Condition</h3>
+									<ul class="filter-group__list">
+										<li>
+											<input type="checkbox" class="form-check" name="filter_condition" id="new_condition">
+											<label for="new_condition">New</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="filter_condition" id="used_condition">
+											<label for="used_condition">Used</label>
+										</li>
+									</ul>
+								</div>
+								<div class="filter-group">
+									<h3 class="filter-group__header">Shop's type</h3>
+									<ul class="filter-group__list">
+										<li>
+											<input type="checkbox" class="form-check" name="filter_shop-type" id="shopee_mall">	
+											<label for="shopee_mall">Shopee Mall</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="filter_shop-type" id="favorite_shop">	
+											<label for="favorite_shop">Favorite shop</label>
+										</li>
+										<li>
+											<input type="checkbox" class="form-check" name="filter_shop-type" id="shopee_guaranteed">	
+											<label for="shopee_guaranteed">Shopee guaranteed</label>
+										</li>
+									</ul>
+								</div>
+								<footer class="search-filter__footer">
+									<button class="btn btn--primary btn--block size-sm text-upper">
+										Clear
+									</button>
+								</footer>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-10 search-result">
+						<div class="sort-bar">
+							<h4 class="sort-bar__title">Sorted by</h4>
+							<button class="btn sort-bar__btn--active">Most popular</button>
+							<button class="btn">New arrivals</button>
+							<button class="btn">Best-sellers</button>
+							<div class="form-select hover_menu--toggle">
+								<span class="select__default">Price</span>
+								<ul class="select__options hover_menu">
+									<li>
+										<input type="radio" name="sort_options" id="sort-price1" checked>
+										<label for="sort-price1">Price: Low to High</label>
+									</li>
+									<li>
+										<input type="radio" name="sort_options" id="sort-price2">
+										<label for="sort-price2">Price: High to Low</label>
+									</li>
+								</ul>
+							</div>
+							<span class="sort-bar__page" data-current-page = "1">/10</span>
+							<div class="sort-bar__page-control">
+								<button class="btn btn--previous"></button>
+								<button class="btn btn--next"></button>
+							</div>
+						</div>
 
+						<div class="product_items">
+							<div class="row">
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/71m-EsCA2aL._AC_UL320_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												iPhone Charger, TAKAGI Lightning Cable 3PACK 6FT Nylon Braided USB Charging
+											</a>
+											<div class="product-card__price">
+												<span class="text-del price">45</span>
+												<span class="price">38.99</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+													<!-- half star  -->
+													<i class="fa-solid fa-star-half-stroke"></i>
+												</div>
+												<span class="product-card__sold">13.1k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary);">Favorite</span>
+											<span class="product-card--sale_off">15%</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-2-4">
+									<div class="product-card">
+										<a href="#">
+											<div class="product-card__img" style="background-image: url(https://m.media-amazon.com/images/I/61vpyWcCqTL._AC_SY450_.jpg);"></div>
+										</a>
+										<div class="product-card__body">
+											<a class="product-card__name" href="#">
+												Wireless Mouse for Laptop, Inphic 2.4G Portable Slim Mouse Rechargeable
+											</a>
+											<div class="product-card__price">
+												<span class="price">6</span>
+												-
+												<span class="price">7</span>
+												<img src="assets/img/free-delivery-truck.svg" alt="free ship" class="free-shipping">
+											</div>
+											<div class="product-card__rate">
+												<input type="checkbox" class="like-btn" name="like_btn" id="">
+												<div class="product-card__rating">
+													<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+													<!-- half star  -->
+													<!-- <i class="fa-solid fa-star-half-stroke"></i> -->
+												</div>
+												<span class="product-card__sold">7.5k</span>
+											</div>
+											<div class="product-card__footer">
+												<p class="product-card__place">Hanoi</p>
+											</div>
+											<span class="product-card--label" style="--clr:var(--primary-mall);">Mall</span>
+											<span class="product-card--sale_off">20%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<ul class="pagination search-result__pagination">
+							<li>
+								<button class="btn btn--previous"></button>
+							</li>
+							<li>
+								<button class="btn btn--primary" disabled>1</button>
+							</li>
+							<li>
+								<button class="btn">2</button>
+							</li>
+							<li>
+								<button class="btn">3</button>
+							</li>
+							<li>
+								<button class="btn">4</button>
+							</li>
+							<li>
+								<button class="btn">5</button>
+							</li>
+							<li>...</li>
+							<li>
+								<button class="btn">10</button>
+							</li>
+							<li>
+								<button class="btn btn--next"></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<footer class="footer">
-
+			<div class="grid">
+				<div class="row">
+					<div class="col-6">
+						<div class="row">
+							<div class="col">
+								<h3 class="footer__heading">About Shopee</h3>
+								<ul class="footer__list">
+									<li>
+										<a href="#">
+											About us
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Shopee careers
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Shopee blog
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Shopee policies
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Shopee logistics
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Contact us
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h3 class="footer__heading">Customer service</h3>
+								<ul class="footer__list">
+									<li>
+										<a href="#">
+											FAQ
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Help center
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Returns & Replacements
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Payment methods
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Forums
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<h3 class="footer__heading">Address</h3>
+								<p class="address">On the 4th-5th-6th floor of the Capital Place, 29 Lieu Giai, Ngoc Khanh, Ba Dinh, Hanoi </p>
+							</div>
+							<div class="col">
+								<h3 class="footer__heading">Shopee app download</h3>
+								<div class="footer__download-apps">
+									<a href="#">
+										<img src="assets/img/qr_code.png" alt="QR code" class="footer__qr">
+									</a>
+									<div class="footer__link-apps">
+										<a href="#">
+											<img src="assets/img/appstore.png" alt="App store">
+										</a>
+										<a href="#">
+											<img src="assets/img/ch_play.png" alt="CH play">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 footer__map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.025149310216!2d105.81163205070895!3d21.03167969298539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab2d1e94f373%3A0x16fecba22edb8121!2sT%C3%B2a%20Nh%C3%A0%20Capital%20Place!5e0!3m2!1sen!2s!4v1635910018641!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col footer__copyright-socials">
+						<p>© 2021 Shopee. All Rights Reserved</p>
+						<ul class="footer__socials">
+							<li>
+								<a href="#">
+									<i class="fa-brands fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-brands fa-youtube"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-brands fa-linkedin-in"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</div>
 
@@ -163,7 +1553,7 @@
 						<input type="password" class="form-control" required placeholder="Type your password again">
 					</div>
 					<div class="form-group form-inline">
-						<input type="checkbox" name="check-policy" required id="policy" class="form-check">
+						<input type="checkbox" class="form-check" name="check-policy" required id="policy" class="form-check">
 						<p class="form-label">
 							I agree to the 
 							<a href="#" class="form-link">Terms of Service</a> and
@@ -177,11 +1567,11 @@
 				</div>
 
 				<footer class="modal-form__footer">
-					<button class="btn btn--sm btn--block btn--with_icon btn--facebook">
+					<button class="btn size-sm btn--block btn--with_icon btn--facebook">
 						<i class="fa-brands fa-facebook-square"></i>
 						Sign up with Facebook
 					</button>
-					<button class="btn btn--sm btn--block btn--with_icon btn--google">
+					<button class="btn size-sm btn--block btn--with_icon btn--google">
 						<i class="fa-brands fa-google"></i>
 						Sign up with Google
 					</button>
@@ -214,11 +1604,11 @@
 				</div>
 
 				<footer class="modal-form__footer">
-					<button class="btn btn--sm btn--block btn--with_icon btn--facebook">
+					<button class="btn size-sm btn--block btn--with_icon btn--facebook">
 						<i class="fa-brands fa-facebook-square"></i>
 						Sign in with Facebook
 					</button>
-					<button class="btn btn--sm btn--block btn--with_icon btn--google">
+					<button class="btn size-sm btn--block btn--with_icon btn--google">
 						<i class="fa-brands fa-google"></i>
 						Sign in with Google
 					</button>
