@@ -8,9 +8,9 @@
 	--gray-border: #ddd;
 	--text-muted: #a5a5a5;
 	--light-hover: #ee4d2d0a;
-	--shadow-primary-0: #ee4d2d3a;
-	--shadow-primary-1: #ee4d2d4b;
-	--shadow-primary-2: #ee4d2d5b;
+	--shadow-primary-0: rgba(238, 77, 45, 0.2);
+	--shadow-primary-1: rgba(238, 75, 43, 0.15);
+	--shadow-primary-2: rgba(238, 77, 45, 0.3);
 	--font-icon: "Font Awesome 6 Free";
 	--border-radius: 3px;
 }
@@ -82,9 +82,11 @@ a{
 }
 
 /* common class  */
+.d-none {display: none!important;}
 .flex-end{
 	justify-content: flex-end !important;
 }
+.flex-center {justify-content: center !important;}
 .mr-1{
 	margin-right: 1rem!important;
 }
@@ -94,8 +96,11 @@ a{
 .text-primary{
 	color: var(--primary) !important;
 }
+.text-center{
+	text-align: center !important;
+}
 .text-del{
-	font-size: 0.8em;
+	font-size: 0.85em;
 	color: var(--text-muted)!important;
 	text-decoration: line-through;
 }
@@ -126,6 +131,7 @@ a{
 	left: 0;
 	right: 0;
 	bottom: 0;
+	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.3);
 	animation: fadeIn 0.2s linear;
 }
@@ -138,7 +144,9 @@ a{
 
 /* form*/
 .form-group{
+	--color: var(--shadow-primary-2);
 	margin-top: 1rem;
+	position: relative;
 }
 .form-inline{
 	display: flex;
@@ -149,12 +157,36 @@ a{
 	width: 100%;
 	font-size: 1rem;
 	padding: 0.75em;
-	border-radius: 4px;
+	border-radius: var(--border-radius);
 	outline: none;
 	border: 1px solid var(--gray-border);
 }
+.form-message{
+	padding: .25rem 0 0 .25rem;
+	color: var(--text-muted);
+}
 .form-control:focus{
-	border-color: var(--shadow-primary-2);
+	border-color: var(--color);
+	box-shadow: 0 0 5px 2px var(--color);
+}
+.form-group.invalid{
+	--color: var(--primary-mall);
+}
+.form-group.warning .form-control,
+.form-group.success .form-control,
+.form-group.invalid .form-control{
+	border-color: var(--color);
+}
+.form-group.warning .form-message,
+.form-group.invalid .form-message,
+.form-group.success .form-message{
+	color: var(--color);
+}
+.form-group.warning{
+	--color: var(--warning);
+}
+.form-group.success {
+	--color: var(--success);
 }
 .form-check{
 	margin-right: 0.5em;
@@ -194,6 +226,42 @@ a{
 	text-align: right;
    margin-top: 5rem;
 }
+/* reveal password */
+::-ms-reveal{
+	display: none;
+}
+.form-reveal-password{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: absolute;
+	right: 0.375rem;
+	top: .75rem;
+}
+.form-reveal-password::before{
+	content: '\f06e';
+}
+.form-reveal-password::after{
+	content: '\f070';
+}
+.form-reveal-password::before,
+.form-reveal-password::after{
+	font-family: var(--font-icon);
+	font-weight: 900;
+	font-size: 1.2rem;
+	color: rgba(0, 0, 0, 0.75);
+	-webkit-font-smoothing: antialiased;
+}
+.form-reveal-password::after{
+	display: none;
+}
+.form-reveal-password:checked::after{
+	display: block;
+}
+.form-reveal-password:checked::before{
+	display: none;
+}
+/* form select  */
 .form-select{
 	display: inline-block;
 	width: max-content;
@@ -217,7 +285,8 @@ a{
 	font-weight: 900;
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
-	color: rgb(146, 146, 146);
+	color: currentColor;
+	opacity: .6;
 	position: relative;
    top: 1px;
 }
@@ -261,6 +330,7 @@ a{
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	border-radius: var(--border-radius);
 }
 .btn:focus{
 	box-shadow: 0 0 0.25em var(--shadow-primary-0),
@@ -387,10 +457,11 @@ a{
 	transform: translateY(-1px);	
 }
 .product-card__img{
+	position: relative;
 	width: 100%;
 	padding-top: 100%;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
@@ -410,6 +481,7 @@ a{
 	overflow: hidden;
 }
 .product-card__price{
+	font-size: 1rem;
 	display: flex;
 	align-items: center;
 	color: var(--primary);
@@ -428,19 +500,20 @@ a{
 }
 .product-card__rating{
 	margin-left: auto;
-	margin-right: 0.5rem;
+	margin-right: 0.75rem;
 	color: var(--warning);
 	font-size: 0.7em;
 	display: flex;
 }
 .product-card__sold{
-
 }
 .product-card__sold::after{
 	content: "Sold";
 	display: inline-block;
 	margin-left: 0.25em;
 	font-weight: 600;
+}
+.product-card__footer{
 }
 .product-card__place{
 	text-align: right;
@@ -501,6 +574,40 @@ a{
 	
 }
 
+.product-card:hover .product-card__controler{
+	visibility: visible;
+	opacity: 1;
+}
+.product-card:hover .product-card__controler > *{
+	opacity: 1;
+	transform: scale(1);
+}
+.product-card__controler{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	z-index: 1;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius);
+	border-bottom: 1px solid var(--primary);
+	background-image: radial-gradient( var(--primary),rgba(255, 169, 88, 0.5),rgba(255, 48, 48, 0.3));
+	/* background-color: rgba(0, 0, 0, 0.3); */
+	visibility: hidden;
+	opacity: 0;
+	transition: all .5s ease;
+}
+.product-card__controler > *{
+	opacity: 0;
+	transform: scale(0);
+	padding: 1rem;
+	font-size: 1.5rem;
+	color: whitesmoke;
+	transition: all 0.5s ease;
+}
 /* like-btn */
 input[type=checkbox].like-btn{
 	appearance: none;
@@ -519,6 +626,8 @@ input[type=checkbox].like-btn::before{
 input[type=checkbox].like-btn:checked::before{
 	font-weight: 900;
 	color: var(--danger);
+	text-shadow: 0 0 10px white;
+	animation: spread .5s cubic-bezier(.1,.65,.98,.62) forwards;
 }
 
 /* pagination */
@@ -529,13 +638,13 @@ input[type=checkbox].like-btn:checked::before{
 	gap: 1.75rem;
 	font-size: 1.25rem;
 }
-.pagination li > *{
+.pagination > *{
 	font-size: inherit;
 	padding: 0.25rem 0.9rem;
 	color: rgba(0, 0, 0, 0.6);
 	height: 2rem;
 }
-.pagination li > .btn.btn--primary:disabled{
+.pagination > .btn.btn--primary:disabled{
 	filter: opacity(1);
 }
 
@@ -553,4 +662,26 @@ input[type=checkbox].like-btn:checked::before{
       transform: scale(var(--grow-to));
       opacity: 1;
    }
+}
+@keyframes spread {
+	0%{
+		transform: scale(1);
+		opacity: 1;
+	}
+	25%{
+		transform: scale(1.5);
+		opacity: .5;
+	}
+	50%{
+		transform: scale(2);
+		opacity: 0;
+	}
+	75%{
+		transform: scale(1.5);
+		opacity: 0.5;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
 }
